@@ -1,0 +1,13 @@
+{
+  "Mode": "Thumbnail",
+  "Settings": {
+    "Type": "AnimationSilhouette",
+    "Arguments": [
+      "assetUrl",
+      "baseUrl",
+      1680,
+      1680
+    ]
+  },
+  "Arguments": {}
+}

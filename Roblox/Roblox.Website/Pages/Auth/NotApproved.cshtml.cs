@@ -1,0 +1,60 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Roblox.Dto.Users;
+using Roblox.Models.Sessions;
+using Roblox.Models.Users;
+using Roblox.Services.Exceptions;
+using Roblox.Website.Controllers;
+
+namespace Roblox.Website.Pages;
+
+public class NotApproved : RobloxPageModel
+{
+    public UserBanEntry? ban { get; set; }
+    public bool ninjaLowTaperFade { get; set; }
+    public bool unlockAccount { get; set; }
+
+    private async Task LoadBan()
+    {
+        if (userSession == null) return;
+        try
+        {
+            // Ninja low taper fadeeee
+            ninjaLowTaperFade = userSession.userId == 3 || userSession.userId == 724 |  userSession.userId == 4397 || userSession.userId == 9|| userSession.userId == 47 || userSession.userId == 1671 || userSession.userId == 2925;
+            ban = await services.users.GetBanData(userSession.userId);
+        }
+        catch (RecordNotFoundException)
+        {
+            var userInfo = await services.users.GetUserById(userSession.userId);
+            
+            if (userInfo.accountStatus == AccountStatus.Ok) return;
+            // TODO: Report this - means accountStatus is invalid or ban doesn't exist when it should.
+            ban = new()
+            {
+                reason = "Reason was not specified. Please contact us via our contact page.",
+                createdAt = DateTime.UtcNow,
+            };
+        }
+    }
+    public async Task<IActionResult> OnGet()
+    {
+        await LoadBan();
+        if (ban == null)
+            return Redirect("/home");
+        return new PageResult();
+    }
+
+    public async Task<IActionResult> OnPost()
+    {
+        await LoadBan();
+        if (ban == null)
+            return Redirect("/home");
+        if (ban.canUnlock && userSession != null)
+        {
+            await services.users.DeleteBan(userSession.userId);
+            return new RedirectResult("/home");
+        }
+
+        return new PageResult();
+    }
+}

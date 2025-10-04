@@ -1,0 +1,19 @@
+{
+  "Mode": "Thumbnail",
+  "Settings": {
+    "Type": "Image",
+    "Arguments": [
+       "assetId",
+       "baseUrl",
+       "PNG",
+       "x",
+       "y",
+       true,
+       0,
+       0,
+       0,
+       0
+    ]
+  },
+  "Arguments": {}
+}

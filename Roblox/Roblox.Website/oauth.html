@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Offline Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #212529;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #30363b;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        color: inherit;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .dark-mode-toggle {
+        margin-top: 20px;
+        color: #fff;
+      }
+
+      #dark-mode-checkbox:checked ~ body {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+
+      #dark-mode-checkbox:checked ~ .container {
+        background-color: #fff;
+      }
+
+      footer {
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Studio Offline Login</h1>
+      <p>
+        You are on the Studio Offline login page. To login, click the button
+        below.
+      </p>
+      <button onclick="redirectToRobloxStudio()">Login</button>
+    </div>
+    <footer>
+      <p>Temporary page, will be changed eventually*</p>
+    </footer>
+
+    <script>
+      function redirectToRobloxStudio() {
+        const username = prompt("Enter your username");
+        const password = prompt("Enter your password");
+
+        let params = new URL(document.location).searchParams;
+        let name = params.get("state");
+        window.location.href = `roblox-studio-auth:/?code=${username}:${password}&state=${name}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "Mode": "Thumbnail",
+    "Settings": {
+      "Type": "BodyPart",
+      "Arguments": [
+         "assetUrl",
+         "baseUrl",
+         "PNG",
+         "x",
+         "y",
+         "RigURL",
+         ""
+      ]
+    },
+    "Arguments": {}
+  }

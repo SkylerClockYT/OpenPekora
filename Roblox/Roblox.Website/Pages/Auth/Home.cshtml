@@ -1,0 +1,160 @@
+@page "/auth/home"
+@model Roblox.Website.Pages.Home
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<style>
+    .navbar-auth {
+        margin-bottom:  -1px;
+    }
+    body {
+        overflow-x:  hidden;
+    }
+    #carouselIndicators {
+        background:  #000;
+    }
+    .carousel-inner {
+        opacity: 0.5;
+    }
+    img.c-home {
+        max-height: 60vh;
+        min-height: 370px;
+        object-fit: cover;
+    }
+    .carousel-text {
+        z-index: 3;
+        position: relative;
+        top: 0;
+        height: 0;
+        overflow: visible;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    }
+    .carousel-text h1 {
+        font-size:  5rem;
+        color:  #fff;
+        padding-top: 1rem;
+    }
+    .carousel-text p {
+        color:  #fff;
+        font-weight: 500;
+    }
+
+    .container-one {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .selling-points > li {
+        margin: 1rem 0;
+    }
+</style>
+
+@section MetaTags {
+    <title>Relive 2017+ with silrev.biz</title>
+    <meta name="description" content="Experience Pekora once again with Marine."/>
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://www.silrev.biz" />
+    <meta property="og:title" content="Relive Pekora with Marine" />
+    <meta property="og:description" content="One of the best and friendliest Pekora Revivals managed by AFTERWORLD." />
+    <meta property="og:image" content="https://www.silrev.biz/UnsecuredContent/HomeImage.png" />
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="carousel-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Marine</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="carouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/UnsecuredContent/Images1.png" class="c-home d-block w-100" alt="An in game screenshot">
+                </div>
+                <div class="carousel-item">
+                    <img src="/UnsecuredContent/Images2.png" class="c-home d-block w-100" alt="An in game screenshot">
+                </div>
+                <div class="carousel-item">
+                    <img src="/UnsecuredContent/Images3.png" class="c-home d-block w-100" alt="An in game screenshot">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-dark text-light container-one">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">How do I make an account?</h3>
+            <p class="text-center">You are required to fill out a quick application confirming your identity to join Marine, this is done to prevent bots and other malicious players from joining. Click the button below to fill out an application.</p>
+            <p class="text-center">
+                <a href="/auth/application" class="btn btn-primary">Create Application</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-dark text-light container-one">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">What is Marine?</h3>
+            <p class="text-center">Marine is a Pekora Revival owned and managed by the developers of Silverium Reborn and AFTERWORLD, It is one of the friendliest Pekora revivals as of right now.</p>
+			<p class="text-center text-danger">NOTE: Marine is not directly affiliated with Pekora or the owner (supra) in any way, shape or form, Marine is just a community-made Pekora Rehost being managed and owned by known individuals and trusteds within the Pekora Community.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-one bg-dark text-light">
+    <div class="container container-one">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-4">What makes this place different?</h3>
+                <div class="row mt-4 mb-4">
+                    <div class="col-2 col-md-1">
+                        <h1 class="text-center">🔑</h1>
+                    </div>
+                    <div class="col-10 col-md-11">
+                        <p><span class="fw-bolder">No invite key required. </span>You don't need to be in the right friend group, constantly track discord servers, or buy keys from people - all you have to do is fill out an application to join.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-dark text-light container-one">
+    <div class="row">
+        <div class="col-12">
+            <h3>Privacy Taken Seriously.</h3>
+            <ul class="selling-points">
+                <li>
+                    <span class="fw-bolder">You don't have to provide any personal information. </span>The only thing we ask for during the application process is a link to your profile on a social media website such as Twitter or YouTube - this is only done to verify that you are not trying to abuse the site.
+                </li>
+                <li>
+                    <span class="fw-bolder">Secure game servers. </span>Our game server software has been modified to not directly see the IPs of players connecting to them. This is done with the help of Quilkin. Quilkin acts as a proxy between the players and our game servers. When a player connects, Quilkin forwards the request to our VPS, which is then processed by Quilkin. The game server program only receives a local IP address from Quilkin, not the player's direct IP address. This means that even if a severe vulnerability is discovered in our game server software, attackers will not be able to collect the IP addresses of users.
+                </li>
+                <li>
+                    <span class="fw-bolder">IP Addresses are hashed and only stored temporarily. </span>Your IP is only stored in a hashed format when you perform certain actions, and it is not directly linked with your website account. Your IP is only ever saved for a maximum of 24 hours, after which it is deleted automatically from where it is stored (Redis - IPs are deleted once they expire, which can be between 5 minutes and 24 hours depending on the task you perform).
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+@page "/internal/referral"
+@model Roblox.Website.Pages.Internal.Referral
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+
+@section MetaTags {
+    <title>Refer User</title>
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h3>Referrals</h3>
+            <p>Here you can refer users, if ur referral is used the user who signed up gets 50 robux and you get 50 robux</p>
+            @if (Model.errorMessage != null)
+            {
+                <p class="text-danger">@Model.errorMessage</p>
+            }
+            else
+            {
+                <form method="POST">
+                    <input disabled="@(!Model.canCreateReferral)" type="submit" class="btn btn-primary mt-1 mb-4" value="Create Referral" />
+                    <input type="hidden" name="action" value="CreateUserReferral" />
+                    @Html.AntiForgeryToken()
+                </form>
+                <table class="table text-white">
+                    <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Times Used</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (Model.referral != null)
+                    {
+                        <tr>
+                            <td>@Model.referral.referralCode</td>
+                            <td>@Model.count</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                @if (Model.referral == null)
+                {
+                    <p>You have not created any referrals.</p>
+                }
+            }
+        </div>
+    </div>
+</div>

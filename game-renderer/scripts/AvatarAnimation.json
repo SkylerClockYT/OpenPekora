@@ -1,0 +1,15 @@
+{
+    "Mode": "Thumbnail",
+    "Settings": {
+      "Type": "AvatarAnimation",
+      "Arguments": [
+         "characterAppearanceUrl",
+         "baseUrl",
+         "PNG",
+         420,
+         420,
+         "animationUrl"
+      ]
+    },
+    "Arguments": {}
+  }
