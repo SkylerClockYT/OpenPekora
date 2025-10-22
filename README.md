@@ -1,4 +1,4 @@
-# Marine (Korone fork)
+# OpenPekora/Marine (Korone Fork)
 
 I won't give you a tutorial on how to set this thing up, it's the same procedure as Economy Simulator but the account creation is different and requires you to tamper with some shit in the join_applications table on the database.
 
