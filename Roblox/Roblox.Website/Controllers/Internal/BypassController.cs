@@ -530,7 +530,7 @@ namespace Roblox.Website.Controllers
                 IsSetPasswordNotificationEnabled = false,
                 ChangePasswordRequiresTwoStepVerification = false,
                 ChangeEmailRequiresTwoStepVerification = false,
-                UserEmail = "pekora@silrev.biz",
+                UserEmail = "openpekora@oppeko.zip",
                 UserEmailMasked = true,
                 UserEmailVerified = true,
                 CanHideInventory = true,
@@ -1346,8 +1346,8 @@ namespace Roblox.Website.Controllers
         public async Task<dynamic> GetOrCreate(string gameId, decimal ping, decimal fps)
         {
 
-            // if(!isRCC)
-            //    throw new Roblox.Exceptions.UnauthorizedException(0, "Unauthorized");
+            if(!isRCC)
+                throw new Roblox.Exceptions.UnauthorizedException(0, "Unauthorized");
 
             int roundPing = (int)Math.Round(ping, 0);
             int roundFps = (int)Math.Round(fps, 0);
@@ -1362,8 +1362,8 @@ namespace Roblox.Website.Controllers
         [HttpGetBypass("v2.0/Refresh")]
         public async Task RefreshGameInstance(Guid gameId, long clientCount, Decimal gameTime)
         {
-            // if (!isRCC)
-            //    throw new Roblox.Exceptions.UnauthorizedException(0, "Unauthorized");
+            if (!isRCC)
+                throw new Roblox.Exceptions.UnauthorizedException(0, "Unauthorized");
             var gameServer = await services.gameServer.GetGameServer(gameId);
 
             if ((clientCount == 0 && gameTime > 50) || gameServer == null)
