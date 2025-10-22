@@ -1,11 +1,3 @@
-hor is now a list of Pekora revivals which are malicious
+HOR.txt (Hall of Retards)
 
-If you are on this list, fuck you and your malicious slop
-
----------------------------------------------------------------------
-Pekora.org
----------------------------------------------------------------------
-It is owned by fascist users who not only nuked the original Pekora (pekora.zip) but also hid a rat on the bootstrapper as a result of Chloe's (ispi) GitHub SSH Keys being stolen
-
-Another thing is that when they leaked the source code of Pekora, they've hid a backdoor on it which triggered only if a specific asset id is loaded and what it did is launch a hidden command prompt and bridge it via a TCP Client which when taking a look at using shodan it's connected through vm.rabbid.pt (aka the domain kerosina or lvpone owns), because of this it allowed the people behind Pekora.org to completely take control over your own computer (basically ratting it) so if you come across this Pekora revival I definetly recommend that no one should ever play it, I've also did a malware scan on it and it came up to a 7/10 malware score so yeah don't even try playing this bullshit since you may end up getting ratted, who knows.
----------------------------------------------------------------------
+I emptied it out.
