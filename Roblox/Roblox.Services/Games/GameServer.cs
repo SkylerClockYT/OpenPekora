@@ -26,7 +26,10 @@ public class GameServerService : ServiceBase
         
         public ArbiterHttpClient()
         {
-            this.BaseAddress = new Uri($"http://176.100.36.98/"); // do not use arbiter.silrev.biz just use neuroticgs.silrev.biz, the reason is due to source leak
+            // BaseAddress should be the url to your game-arbiter host itself
+            // i don't really know why pekora's developers decided to hardcode this except for
+            // making a configuration on AppSettings.json (i gotta do that soon)
+            this.BaseAddress = new Uri($"http://gamearbiterserverhere.com/");
             this.DefaultRequestHeaders.Add("PJX-ArbiterAUTH", Configuration.ArbiterAuthorization);
         }
         public async Task<bool> StartGameServer(StartGameServerRequest request)
