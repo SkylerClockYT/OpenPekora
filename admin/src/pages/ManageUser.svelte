@@ -12,7 +12,7 @@
 	import ManageTextContent from "../components/users/ManageTextContent.svelte";
 	import ManagePermissions from "../components/users/ManagePermissions.svelte";
 	let userInfo;
-	const privacySettings = ["inventory_privacy", "theme", "year", "gender", "trade_privacy", "trade_filter", "private_message_privacy"];
+	const privacySettings = ["inventory_privacy", "theme", "gender", "trade_privacy", "trade_filter", "private_message_privacy"];
 	const privacySettingToString = (setting: string): string => {
 		return setting
 														.replace(/\_/g, " ")
@@ -126,7 +126,7 @@
 							{/if}
 							{#if info.data.is_moderator || info.data.is_admin}
 							<div class="card card-body card-header bg-info">
-								<p class="mb-0">This user cannot be modified.</p>
+								<p class="mb-0">This user is a staff member.</p>
 							</div>
 							{/if}
 							{#if (!info.data.is_moderator && !info.data.is_admin && !info.data.joinApp && !info.data.invite)}
